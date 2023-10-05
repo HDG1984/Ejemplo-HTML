@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqueta grid</title>
+    <style>
+        .grid_container {
+            display: grid;
+            background-color: white;
+            grid-template-areas: 'header header header header'
+                'nav nav nav nav'
+                'main main main main'
+                'footer footer footer footer';
+            row-gap: 10px;
+        }
+
+        .grid_container>* {
+            background-color: #707B7C;
+            filter: opacity(50%);
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .grid_container nav {
+            display: flex;
+            background-color: #707B7C;
+            filter: opacity(50%);
+            padding: 10px;
+            border: 2px solid black;
+            line-height: 70px;
+            justify-content: center;
+            font-size: larger;
+        }
+
+        .grid_container main {
+            display: flex;
+            background-color: #707B7C;
+            filter: opacity(40%);
+            padding: 10px;
+            border: 2px solid black;
+            justify-content:center;
+            line-height: 500px;
+            font-size: larger;
+        }
+
+        .grid_header {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-content:space-between;
+        }
+
+        .grid_header .logo {
+            background-color: #D7DBDD;
+            filter: opacity(50%);
+            width: 300px;
+            margin: 10px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 80px;
+
+        }
+
+        .grid_header .text_cabecera {
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .grid_header .icono {
+            background-color: #D7DBDD;
+            filter: opacity(50%);
+            width: 300px;
+            margin: 10px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 80px;
+        }
+
+
+
+        .grid_footer {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-content:space-between;
+        }
+
+        .grid_footer .pie1 {
+            background-color: #D7DBDD;
+            filter: opacity(50%);
+            width: 300px;
+            margin: 10px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 80px;
+
+        }
+
+        .grid_footer .texto_pie {
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .grid_footer .pie2 {
+            background-color: #D7DBDD;
+            filter: opacity(50%);
+            width: 300px;
+            margin: 10px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid_container">
+        <header style="grid-area: header;" class="grid_header">
+            <div class="logo">Logo</div>
+            <div class="text_cabecera">Cabecera</div>
+            <div class="icono">Icono</div>
+        </header>
+        <nav style="grid-area: nav;">Navegación</nav>
+        <main style="grid-area: main;">Contenido</main>
+        <footer style="grid-area: footer;" class="grid_footer">
+            <div class="pie1">Pie 1</div>
+            <div class="texto_pie">Pie de página</div>
+            <div class="pie2">Pie 2</div>
+        </footer>
+    </div>
+</body>
+
+</html>

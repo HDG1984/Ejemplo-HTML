@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0">  <!-- Versión RSS. -->
+	<channel>       <!-- Se crea el canal con el link de la pagina donde estará el enlace RSS. -->
+		<title>Canal RSS</title>
+		<link>file:///C:/Users/HDG61/OneDrive/Escritorio/Nueva%20carpeta/D%C3%ADaz_Guti%C3%A9rrez_Helio_LMSGI03_Tarea/index.html</link>
+		<description>Canal de noticias</description>
+		<language>es</language>
+		<pubDate>Wed, 6 Jan 2021 19:43:00 GMT</pubDate>
+		<managingEditor>hdg6184@hotmail.com(Helio Díaz)</managingEditor>
+		<category>Viveros</category>
+		<category>Semilleros</category>
+		<category>Arreglos florales</category>
+		<item>    <!-- Se abren tantos item como noticias se quieran poner, vinculando el link a su pagina de origen, se añade el elemento <enclosure> con la dirección de la imagen para que se muestre en las noticias. -->
+			<title> Vivero la flor de Almería crea web con servicio de sindicación de contenidos.</title>
+			<link> https://www.viverolaflordealmeria.es/noticias/nuevo_servicio_de_sindicacion</link>
+			<category>viveros</category>
+			<pubDate>Sat, 18 Dec 2021 10:30:00 +0100</pubDate>
+			<description>El vivero la flor de Almería añade a su web el servicio de sindicación de contenidos con los estándares RSS y Atom.</description>
+		</item>
+        <item>
+			<title>Consejos para que las poinsettias luzcan perfectas en los establecimientos y sobrevivan tras las fiestas navideñas</title>
+			<link>https://www.guiaverde.com/noticias/consejos-para-que-las-poinsettias-luzcan-perfectas-en-los-establecimientos-y-sobrevivan-tras-las-fiestas-navidenas-6814/</link>
+			<author>Stars_for_Europe@gmail.com(Stars for Europe)</author>
+			<enclosure url="https://www.guiaverde.com/files/noticia/poinsettias_starsforeurope_03122021103100.jpg" length="368888" type="image/jpg" />
+			<description>Aconsejar a los clientes sobre cómo cuidar estas sensibles plantas de temporada te ayudará a mantener el ritmo de ventas durante la Navidad y a mejorar tu reputación</description>
+			<pubDate>Fri, 03 Dec 2021 00:00:00 +0100</pubDate>
+		</item>
+		<item>
+			<title>La exportación de flor cortada española crece un 49% en el último lustro y mantiene la evolución positiva en 2021</title>
+			<link>https://www.infoagro.com/noticias/2021/la_exportacion_de_flor_cortada_espanola_crece_un_49__en_el_ultimo_lust.asp</link>
+			<enclosure url="https://www.infoagro.com/noticias/images/35963_l_flores_cortadas_.jpg" length="368888" type="image/jpg" />
+			<description>Hasta junio las ventas al exterior crecieron un 20%, siendo Andalucía la primera comunidad exportadora con casi la mitad del total de España, seguida de Castilla y León y la Comunidad Valenciana.</description>
+			<pubDate>Mon, 18 Oct 2021 00:00:00 +0100</pubDate>
+		</item>
+    </channel>
+</rss>

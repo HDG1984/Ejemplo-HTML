@@ -1,0 +1,469 @@
+/* Se crean las variables que contendrán los tres colores principales.*/
+:root {
+    --color1: #EB6440;
+    --color2: #497174;
+    --color3: #D6E4E5;
+}
+
+/* Llamado a la fuente guardada en el proyecto*/
+@font-face {
+    font-family: "fuente_local";
+    src: url("./Fuentes/FragmentMono-Regular.ttf");
+}
+
+/* Márgenes y padding generales.*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Se mantiene en una fila y en columnas.*/
+.padre {
+    display: flex;
+    flex-flow: column nowrap;
+}
+/* Altura automática, se añade una imagen que está centrada, 
+dentro del contenido y que cubra toda la caja, elementos centrados, en fila y un borde en la parte inferior.*/
+.header {
+    display: flex;
+    height: auto;
+    background: url(../images/cocina.jpg);
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px solid var(--color3);
+}
+/* Se define la capacidad de alterar sus dimensiones de manera flexible*/
+.logo {
+    flex: 1 1 auto;
+}
+/* Posicionamiento del logo.*/
+.pos_logo {
+    position: relative;
+    left: 50px;
+}
+/* Se define la capacidad de alterar sus dimensiones de manera flexible y se le da un margen izquierdo.*/
+.nombre_empresa {
+    margin-left: 50px;
+    flex: 8 1 auto;
+}
+/* Posicionamiento del título y se le añade una fuente.*/
+.titulo {
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    right: 20px;
+}
+/* Se define la capacidad de alterar sus dimensiones de manera flexible, se le da un margen izquierdo y los 
+hijos serán en fila y podrán cambiar a otra fila si lo necesitan.*/
+.icono {
+    flex: 4 1 auto;
+    background: rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 50px;
+
+}
+/* Se define la capacidad de alterar sus dimensiones de manera flexible de los cuatro iconos.*/
+.zona_privada {
+    flex: 1 1 auto;
+}
+
+.cesta {
+    flex: 1 1 auto;
+}
+
+.ayuda {
+    flex: 1 1 auto;
+}
+
+.accesibilidad {
+    flex: 1 1 auto;
+}
+/* Color de fondo por variables, se le da un alto al contenedor y los elementos hijos estarán centrado en alto y ancho.*/
+.nav {
+    background-color: var(--color2);
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+/* se le da padding de izquierda y derecha a los enlaces se añade color a los enlaces y se le quita el subrayado.*/
+nav a {
+    padding-right: 20px;
+    padding-left: 20px;
+    color: var(--color3);
+    text-decoration: none;
+}
+/* Se le pone efecto a los enlaces al pasar el ratón por encima. */
+nav a:hover {
+    color: var(--color1);
+}
+/* Se le pone tipo de fuente a los h2 contenidos en los enlaces.*/
+nav a h2 {
+    font-family: 'fuente_local', serif;
+}
+/* Se le pone color por variable al main y los hijos serán en columna y no se saldrán de la fila.*/
+.main {
+    background-color: var(--color3);
+    display: flex;
+    flex-flow: column nowrap;
+}
+/* Se le añade margen y padding a la sección y display flex para darle posición y flexibilidad a los hijos,los hijos 
+serán en fila y se podrán salir de la fila.*/
+.main_familia_produc {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+    padding: 50px;
+}
+/* Posicionamiento de los títulos de sección h3, tipo de fuente, espacio entre letras y margen inferior.*/
+.main_familia_produc h3 {
+    position: relative;
+    font-family: 'fuente_local', serif;
+    letter-spacing: 7px;
+    margin-bottom: -40px;
+    left: 20px;
+}
+/* Se define la capacidad de alterar sus dimensiones  y posición de manera flexible, se le añade overflow: hidden para darle 
+efecto al pasar el ratón sobre el contenedor y un tiempo de transición, se le da una altura, márgenes y padding.*/
+.baño {
+    height: 400px;
+    flex: 1 1 40%;
+    overflow: hidden;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 12px;
+}
+/* Se le pone se le pone ancho y alto al 100% a la imagen para que se adapte al contenedor se le añade borde redondeado, sombra y un tiempo 
+de transición del efecto, también márgenes y padding.*/
+.baño img {
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.50);
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 10px;
+}
+/* Se le pone escala de transformación al efecto y que el puntero cambie al ponerlo encima.*/
+.baño img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+/* Para las demás secciones igual.*/
+.dormitorios {
+    letter-spacing: 7px;
+    height: 400px;
+    flex: 1 1 40%;
+    overflow: hidden;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 12px;
+}
+
+.dormitorios img {
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.50);
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 10px;
+}
+
+.dormitorios img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.salon {
+
+    letter-spacing: 7px;
+    height: 400px;
+    flex: 1 1 40%;
+    overflow: hidden;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 12px;
+}
+
+.salon img {
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.50);
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 10px;
+}
+
+.salon img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.cocinas {
+    letter-spacing: 7px;
+    height: 400px;
+    flex: 1 1 40%;
+    overflow: hidden;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 12px;
+
+}
+
+.cocinas img {
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.50);
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease;
+    margin: 7px;
+    padding: 10px;
+}
+
+.cocinas img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+/* Se mantiene en una fila y en columnas.*/
+.main_mas_vendidos {
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+/* Se define la capacidad de alterar sus dimensiones  y posición de manera flexible, los hijos 
+se dispondrán con la propiedad en línea y bloque y se le añade color de fondo.*/
+.mas_vendidos1 {
+    background-color: rgb(200, 193, 173);
+    flex: 1 1 auto;
+    display: inline-block;
+
+
+}
+/* Se posicionan el titulo (h3) y la descripción (p) y se le añade una fuente a cada uno.*/
+.mas_vendidos1 h3 {
+    position: relative;
+    font-family: 'fuente_local', serif;
+    margin-bottom: -65px;
+    left: 2px;
+}
+
+.mas_vendidos1 p {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    bottom: -70px;
+    left: 2px;
+}
+/* Se dice cuanto tiene que abarcar del contenedor la imagen.*/
+.imagen_mas_vendido img {
+    width: 80%;
+    height: 60%;
+}
+/* Se le da margen izquierdo a la tabla.*/
+.tabla_mas_vendido {
+    margin-left: 20px;
+}
+/* Se le da estilo a la tabla y se le pone un color diferente a las filas pares.*/
+table {
+    font-family: 'Playfair Display', serif;
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 3px;
+}
+
+thead {
+    background-color: var(--color1);
+    border-bottom: solid 5px var(--color2);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+/* Se define la capacidad de alterar sus dimensiones y posición de manera flexible, los hijos serán en 
+fila y se podrán salir de la fila, el contenido se alineara en el centro y se le añade color de fondo.*/
+.mas_vendidos2 {
+    background: rgba(0, 0, 0, .2);
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+/* Se le añade posición a h3 y p y se le pone fuente a cada uno.*/
+.mas_vendidos2 h3 {
+    font-family: 'fuente_local', serif;
+    position: relative;
+    margin-bottom: -60px;
+    left: 140px;
+    font-size: small;
+}
+
+.mas_vendidos2 p {
+    position: relative;
+    bottom: -60px;
+    left: 140px;
+    font-family: 'Playfair Display', serif;
+}
+/* Los productos pares tendrán una sombra diferente de los impares con bordes redondeados.*/
+.producto:nth-child(even) {
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: -10px -10px 2px rgba(53, 43, 43, 0.367);
+}
+
+.producto:nth-child(odd) {
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: -10px -10px 2px rgba(35, 30, 30, 0.186);
+}
+/* Se define la capacidad de alterar sus dimensiones y posición de manera flexible y se le añade un margen izquierdo.*/
+.producto {
+    flex: 1 1 40%; 
+    margin-left: 10px;
+
+}
+/* Se define la capacidad de alterar sus dimensiones y posición de manera flexible y se le añade un borde superior.*/
+.main_informacion {
+    flex: 1 1 100%;
+    border-top: solid 5px var(--color3);
+
+}
+/* Se le añade un color de fondo, al texto se le da un padding de 10px a cada lado, se le da color, se centra y se pone en mayúsculas.*/
+.titulo_informacion {
+    background-color: #497174;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    text-transform: uppercase;
+    color: var(--color3);
+}
+/* Se le añade un color de fondo, al texto se le da un padding de 10px a cada lado, se pone el texto en tres columnas y con column-fill: 
+balance para que se rellenen las tres columnas, se le da una separación de columnas de 30px, con column-rule: 4px double var(--color1) 
+le damos un separador de dos líneas verticales y se le aplica al texto una fuente.*/
+.texto_informacion {
+    background-color: rgba(73, 113, 116, 0.57);
+    padding: 10px 10px 10px 10px;
+    column-count: 3;
+    column-fill: balance;
+    column-gap: 30px;
+    column-rule: 4px double var(--color1);
+    font-family: 'Playfair Display', serif;
+}
+/* Se añade una imagen que está centrada, dentro del contenido y que cubra toda la caja, se define la capacidad de alterar sus dimensiones
+ y posición de manera flexible, los hijos serán en fila y se podrán salir de la fila.*/
+.footer {
+    background: url(../images/foto_pie.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-flow: row wrap;
+
+}
+/* Se define la capacidad de alterar sus dimensiones y posición de manera flexible, los hijos serán en fila y no podrán salir de la fila
+el contenido estará centrado vertical y horizontalmente y tendrá un padding superior de 100px y los demás a 20px.*/
+.pie1 {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 20px 20px;
+
+}
+/* A los enlaces se le aplica un color de fondo con transparencia y color de fuente, 
+se le añade un padding a la derecha de 20px y se le elimina el subrayado.*/
+.pie1 a {
+    background: rgba(0, 0, 0, .2);
+    padding-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+/* Se le crea un efecto con hover para que cuando el puntero este encima cambie de color y se le añada un subrayado.*/
+.pie1 a:hover {
+    color: var(--color3);
+    text-decoration: underline;
+}
+/* Se le añade tipo de fuente al h4 contenido dentro de los enlaces.*/
+.pie1 a h4 {
+    font-family: 'Playfair Display', serif;
+}
+/* Se define la capacidad de alterar sus dimensiones y posición de manera flexible, el contenido estará centrado vertical y horizontalmente
+tendrá un padding inferior de 10px y el resto de 20px.*/
+.pie2 {
+    flex: 1 1 100%;
+    display: flex;
+    padding: 20px 20px 10px 20px;
+    align-items: center;
+    justify-content: center;
+}
+/* Se define lo que aparecerá en las resoluciones menores de 768px de pantalla.*/
+@media screen and (max-width: 768px) {
+    /* La sección de más vendidos aparecerá en columna*/
+    .main_mas_vendidos {
+        flex-direction: column;
+    }
+    /* La sección de familia de productos aparecerá en columna.*/
+    .main_familia_produc {
+        flex-direction: column;
+    }
+    /* La información aparecerá en una sola columna.*/
+    .texto_informacion {
+        column-count: 1;
+    }
+    /* El nombre de la empresa no aparecerá.*/
+    .nombre_empresa {
+        display: none;
+    }
+    /* la tabla no aparecerá.*/
+    .tabla_mas_vendido {
+        display: none;
+    }
+    /* Los productos del 2 al 6 no aparecerán.*/
+    .producto:nth-child(2) {
+        display: none;
+    }
+
+    .producto:nth-child(3) {
+        display: none;
+    }
+
+    .producto4:nth-child(4) {
+        display: none;
+    }
+
+    .producto:nth-child(5) {
+        display: none;
+    }
+
+    .producto:nth-child(6) {
+        display: none;
+    }
+    /* Se ajustan los iconos para que aparezcan en dos filas de dos iconos cada una.*/
+    .zona_privada {
+        flex: 1 1 40%;
+    }
+
+    .cesta {
+        flex: 1 1 40%;
+    }
+
+    .ayuda {
+        flex: 1 1 50%;
+    }
+
+    .accesibilidad {
+        flex: 1 1 50%;
+    }
+
+}

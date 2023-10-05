@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<html>
+    <head>
+        <title>Vivero La flor de Almería</title>
+        <meta http-equiv="content-type"
+            content="text/html;charset=utf-8" />
+              <!-- Enlaces a los canales de contenidos para RSS y Atom con la ruta a los archivos .xml. -->
+        <link rel="alternate" type="aplication/rss+xml" title="Canala RSS" href="feed/canal.rss" />
+
+        <link rel="alternate" type="aplication/atom+xml" title="Canal Atom" href="feed/canal.atom.xml">
+           <!-- Enlace para añadir estilo por CSS. -->
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+     <body>   <!-- La capa contenedor es la que engloba a todas las demás encima de ella y modificada por css -->
+         <div id="contenedor">
+            <div id="encabezado">
+                <div id="logo">
+                    <img src="img/logo3.png" width="350" height="200">
+                </div>
+                <div id="menu">   <!--El menú se forma con listas (ul )y enlaces (<a href>) a cada parte de la capa contenido y modificado por css. -->
+                    <ul>     
+                        <li><a href="#inicio">Inicio</a></li> 
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#formacion">Formación</a></li>
+                        <li><a href="#citapre">Cita previa</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- La capa contenido esta dividida en 4 capas mas: en la capa inicio el banner se forma por (<video src="la dirección del banner")y autoplay, loop y muted, hacen que se reproduzca en bucle y en silencio. -->
+            <div id="contenido">
+                <div id="inicio"><br>
+                   <video src="img/banner.mp4" autoplay muted loop width="640" height="480"></video><br>
+                   <p align="center">El vivero La flor de Almería tenemos una gran selección de plantas de exterior e interior y todo lo necesario para su mantenimiento.</p><br>
+                   <div id="list">
+	                   <ol>
+	                   	   <li>Plantas interior</li>
+		                        <ol type="a">
+			                       	<li>Geranio</li>
+			                       	<li>Cinta</li>
+		                        </ol>
+	                       <li>Plantas exterior</li>
+                       			<ol type="a">
+                       				<li>Lirio</li>
+                       			</ol>
+               			   <li>Fertilizante</li>
+               			   		<ol type="a">
+			                       	<li>Abono</li>
+			                       	<li>Guano</li>
+		                        </ol>
+	                       <li>Insecticida</li>
+	                       		<ol type="a">
+                       				<li>Teflutrin</li>
+                       			</ol>
+	                   </ol>
+                   </div>
+                </div>
+                <!-- En la capa productos se crean los contenedores con (<section class="container1") y con <figure> y (<img src="lugar donde esta la foto" )se añade la foto. -->
+                <div id="productos"><br>
+                  <h1 align="center">Productos</h1>
+
+                    <div id="texto1">
+                      <h2>Plantas interior</h2>
+                    </div>
+
+                    <section class="container1">
+                       <figure>
+                           <img src="img/interior.jpg" alt="">
+                       </figure>
+                    </section>
+
+                    <div id="texto2">
+                      <h2>Plantas exterior</h2>
+                    </div>
+
+                    <section class="container2">
+                       <figure>
+                           <img src="img/exterior.jpg" alt="">
+                       </figure>
+                    </section>
+
+                    <div id="texto3">
+                      <h2>Fertilizantes</h2>
+                    </div>
+
+                    <section class="container3">
+                       <figure>
+                           <img src="img/fertilizante.jpg" alt="">
+                       </figure>
+                    </section>
+
+                    <div id="texto4">
+                      <h2>Insecticida</h2>
+                    </div>
+
+                    <section class="container4">
+                       <figure>
+                           <img src="img/insecticida.jpg" alt="">
+                       </figure>
+                    </section>
+                </div>
+                <!-- En la capa formacion se crea una tabla con (<tr> y <td>), se le añade border. -->
+                <div id="formacion"><br>
+                  <h1 align="center">Formación</h1><br><br>
+                    <table border= "1px";>  
+                       <tr>
+                         <td></td>
+                         <th>Lunes</td>
+                         <th>Martes</th>
+                         <th>Miércoles</th>
+                         <th>Jueves</th>
+                         <th>Viernes</th>
+                       </tr>
+                       <tr>
+                         <th>17:00</th>
+                         <td rowspan="2">Iniciación a bonsáis</td>
+                         <td>Poda y Mantenimiento</td>
+                         <td rowspan="2">Poda y Mantenimiento</td>
+                         <td>Cuidados plantas interior</td>
+                         <td>Iniciación a bonsáis</td>
+                       </tr>
+                       <tr>
+                         <th>18:00</th>
+                         <td>Curso biodigestores</td>
+                         <td rowspan="2">Agricultura ecológica</td>
+                         <td rowspan="2">Curso biodigestores</td>
+                       </tr>
+                       <tr>
+                         <th>19:00</th>
+                         <td>Jardineria</td>
+                         <td>Cuidados plantas interior</td>
+                         <td>Jardineria</td>   
+                       </tr>
+                    </table>
+                </div>
+                <!--En la capa citapre se crean 3 div: uno para el titulo otro para la foto y el tercero para el formulario. El formulario se crea con form e input, con (class="field") se da un aspecto determinado por css. el desplegable usa select y option para representarse, la caja de comentarios con textarea y el botón con (type="submit"). class la aporta estilo en css.  -->
+                <div id="citapre"><br>
+                    <div id="textcita">
+                         <h1 align="center">Cita previa</h1>
+                    </div>
+                    <div id="imagen">
+                        <img src="img/Cita.jpg" width="450" height="450">
+                    </div>
+                  <div id="formulario">
+
+                       <form action="">
+                          <p>Nombre y apellidos:</p>
+                          <input type="text" class="field"> <br/>
+
+                          <p>Correo electrónico:</p>
+                          <input type="text" class="field"> <br/>
+
+                          <p>Teléfono</p>
+                          <input type="text" class="field"> <br/>
+                        
+                          <p>Producto o servicio</p>
+                          <select name="transporte" class="field"> <br/>
+                             <option>Plantas interior</option>
+                             <option>Plantas exterior</option>
+                             <option>Fertilizantes</option>
+                             <option>Iniciación a bonsáis</option>
+                             <option>Jardineria</option>
+                             <option>Cuidados plantas interior</option>
+                             <option>Curso biodigestores</option>
+                             <option>Poda y Mantenimiento</option>
+                             <option>Agricultura ecológica</option>
+                          </select>
+                          <p>Comentarios</p>
+                          <textarea class="field"></textarea> <br/> 
+                          <br>
+                          <p class="center-content"><input type="submit" class="btn btn-green" value="Enviar datos"></p>
+                       </form>
+                  </div>
+                  
+                </div>
+            </div>
+            <!-- En la capa pie se crean 3 div: uno para foto otro para link con (<a/>) y otro para el texto. -->
+            <div id="pie">
+               <dir id="fotopie">
+                  <img src="img/BY.jpg" width="118" height="42">
+               </dir>
+               <div id="linklegal">
+                  <p>Helio Díaz Gutiérrez</p>
+                  <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode.es">Enlace al texto legal</a>
+               </div>
+               <div id="textpie">
+                  <p align="center">La flor de Almería, Calle Carlos V número 22, Almería, CP:04120. Teléfono: 950821216. Email de contacto: general@lafloralmeria.es. </p>
+               </div>
+               <!-- Enlaces para acceder a los archivos RSS y Atom, añadiendo img con la ruta de la foto del link. -->
+               <div id="iconosrss">
+               <a type="aplication/rss+xml" href="feed/canal.rss"><img src="img/foto_rss.png" width="" height="" alt="" /></a>
+
+               <a type="aplication/rss+xml" href="feed/canal.atom.xml"><img src="img/foto_atom.png" width="" height="" alt="" /></a>
+              </div>
+            </div>
+         </div>
+    </body>   
+</html>
