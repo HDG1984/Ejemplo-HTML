@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./estilo/estilo.css" >
+    <title>Animaciones</title>
+</head>
+<body>
+    <header>
+        <h1>Ejemplos de animaciones</h1>
+       
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#opcion_1" accesskey="1">Transformaciones-Transiciones</a></li>
+            <li><a href="#opcion_2" accesskey="2">Animaciones CSS</a></li>
+            <li><a href="#opcion_3" accesskey="3">Animaciones Canvas</a></li>
+            
+        </ul>
+    </nav>
+    <div class="ej_2" id="opcion_1">
+        <div class="izquierda">
+            <h4>Usuarios</h4>
+            <div class="circulo">
+                <img src="./img/usuarios.svg" alt="Usuarios">  
+            </div>
+        </div>
+        <div class="derecha">
+            <div class="circulo">
+                <img src="./img/usuarios.svg" alt="Usuarios">
+            </div>
+            <h4>Usuarios</h4>
+        </div>
+    </div>
+    <div  id="opcion_2">
+        <div class="ej_3">
+            <div class="polo" id="animacion_1">
+                +
+            </div>
+            <div class="cuerpo_pila">
+                <div class="recarga" id="animacion_2"></div>
+            </div>
+            <div class="texto_carga" id="animacion_3">
+                ¡Carga completada!
+            </div>
+            <div class="botones">
+                <button id="parar">Parar</button>
+                <button id="reanudar">Reanudar</button>
+            </div>
+        </div>
+    </div>
+    <div class="ej_4" id="opcion_3">
+        <canvas id="lienzo_canvas" width="200" height="300">
+            Su navegador no soporta el elemento canvas.
+        </canvas>
+        <button id="cargar">Cargar</button>
+    </div>
+
+    <footer>
+      
+    </footer>
+
+    <!-- Incrustación del código Java Script -->
+    <script src="control.js"></script>
+</body>
+</html>

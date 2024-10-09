@@ -1,0 +1,839 @@
+/* Variables que contendrán los tres colores principales.*/
+:root {
+--color1: #707B7C;
+--color2: #7FB3D5;
+--color3: RGBA(215, 219, 221, 0.6);
+}
+
+/*Incorporación de fuentes de Google Fonts.*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap');
+
+/* Llamado a la fuente guardada en el proyecto para el nombre de la empresa*/
+@font-face {
+font-family: "fuente_local";
+src: url("../fuentes/FragmentMono-Regular.ttf");
+}
+
+/* Se establecen márgenes y rellenos a 0.*/
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Se le dan las proporciones a la página en el contenedor principal con Grid creando 3 columnas y cuatro filas, se crean las áreas
+y lo que van a ocupar cada una.*/
+.contenedor{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, auto);
+grid-template-areas: "header header header"
+                        "breadcrumb breadcrumb breadcrumb"
+                        "nav nav nav"
+                        "main main main"
+                        "footer footer footer";
+}
+
+/* Se asigna header al área de la cuadrícula, se establece como Grid, se ponen las tres columnas a una fracción de ancho y centrada, 
+se pone de fondo una imagen centrada y que ocupe todo el contenedor.  */
+header{
+grid-area: header;
+height: 400px;
+width: auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+align-items: center;
+background:url("../img/edificio5.jpg");
+background-size: cover;
+background-position: center;
+}
+
+/* Se establece una altura fija y una anchura automática con el contenido, se establece como grid y se centra el contenido 
+vertical y horizontalmente.*/
+.nombre{
+height: 150px;
+width: auto;
+display: grid;
+align-content: center;
+justify-content: center;
+}
+
+.nombre a{
+    text-decoration: none;
+    color: black;
+}
+
+.nombre a:hover{
+    color:bisque;
+}
+
+/* Se establece la fuente local y la de respaldo, se aplica sombra al texto y se le da un relleno interno.*/
+h1{
+font-family: "fuente_local", sans-serif;
+text-shadow: 5px 5px 8px rgb(34, 33, 33);
+padding: 10px;
+}
+
+/* Se establece una altura fija y una anchura automática con el contenido, se establece como grid y se centra el contenido 
+vertical y horizontalmente.*/
+.sub_header2{
+height: 150px;
+width: auto;
+display: grid;
+align-content: center;
+justify-content: center;
+}
+
+/* Se establece una altura fija y una anchura automática con el contenido, se establece como grid y se centra el contenido 
+vertical y horizontalmente con un espacio vertical entre filas.*/
+.sub_header3{
+height: 150px;
+width: auto;
+display: grid;
+align-content: center;
+justify-content: center;
+row-gap: 90px;
+}
+
+/* Se establece una altura y una anchura para el contenido, se establece como grid y se centra el contenido 
+vertical y horizontalmente.*/
+.h_botones{
+width: 205px;
+height: 30px;
+display: grid;
+align-content: center;
+justify-content: center;
+}
+
+/* Se usa modelo de caja flexible y se ponen en columna.*/
+.h_botones form{
+display: flex;
+flex-direction: column;
+}
+
+/* Se le quitan los bordes a los botones, se le aplica un relleno interno, se le dan márgenes externos, se le aplican bordes 
+redondeados, se le pone un color de fondo con variables del proyecto y se le cambia el color a la fuente.*/
+input[type="submit"]{
+border: none;
+padding: 5px;
+margin: 6px 8px;
+border-radius: 15px;
+background-color: var(--color3);
+color: gray;
+}
+
+/* Al pasar por encima (hover) de los botones se le cambia el color de fondo y de la fuente.*/
+input[type="submit"]:hover{
+background-color: var(--color1);
+color: white;
+}
+
+/* Se establece como grid y se centra el contenido 
+vertical y horizontalmente.*/
+.img_header{
+display: grid;
+align-content: center;
+justify-content: center;
+}
+
+/* Se asigna nav al área de la cuadrícula, se da una altura adaptable en auto, se le pone un borde de color a la parte baja 
+del contenedor y se usa modelo de caja flexible en fila y que se adapte al espacio del contenedor cambiando de fila, 
+los elementos se centran vertical y horizontalmente.*/
+nav{
+grid-area: nav;
+height: auto;
+border-bottom: 2px solid var(--color3);
+display: flex;
+flex-flow: row wrap;
+align-items: center;
+justify-content: center;
+}
+
+.submenu{
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid var(--color3);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+nav ul ul {
+    display: none; 
+}
+
+nav li:hover > ul {
+    display: flex; /* Mostrar el submenú en línea al pasar el ratón */
+     
+    position: absolute; /* Ajustar la posición del submenú */
+    top: 56%;
+}
+
+/* Para los enlaces se usa modelo de caja flexible, se le quita el subrayado, se cambia la fuente con su respaldo y se cambia 
+el color de la misma, se aplica márgenes externos.*/
+nav a{
+display: flex;
+flex-wrap: wrap;
+text-decoration: none;
+
+color: var(--color1);
+margin: 30px;
+font-family: 'Montserrat', sans-serif;
+}
+
+nav a:hover{
+    color: var(--color3);
+}
+
+.barra_info{
+    grid-area: breadcrumb;
+    display: flex;
+}
+
+.breadcrumb{
+    
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 15px;
+    border-bottom: 2px solid var(--color3);
+}
+
+.breadcrumb li+li:before {
+padding: 8px;
+color: black;
+content: ">";
+}
+
+.breadcrumb li{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.breadcrumb li a {
+color: #0275d8;
+text-decoration: none;
+margin-left: 20px;
+}
+
+.breadcrumb li a:hover {
+color: #01447e;
+text-decoration: underline;
+}
+
+.sub_info{
+    background-color: white;
+    display: flex;
+    width: auto;
+    flex-flow: column wrap;
+    border-radius: 10px;
+    border: 1px solid var(--color3);
+    padding: 5px;
+}
+
+.barra_info .ul_info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.barra_info .ul_info ul {
+    display: none; 
+    list-style: none;
+}
+
+.barra_info li:hover > ul {
+    display: flex; 
+    
+    position: absolute; 
+    top: 50%;
+    left: 85%;
+    
+}
+
+/* Se asigna main al área de cuadrícula, se usa el modelo de caja flexible en columna y que no puedan ocupar más espacio que 
+el del contenedor, se le da un ancho y altura en automática, se pone una imagen de fondo ajustada al contendor y se deja fija 
+para que no se desplace con la página. */
+main{
+grid-area: main;
+display: flex;
+flex-flow: column nowrap;
+width: 100%;
+height: auto;
+background:url("../img/fondoB2.jpg");
+background-position: top;
+background-size: cover;
+background-origin: content-box;
+background-attachment:fixed;
+}
+
+/* Se le da un margen exterior superior, se dispone como modelo de caja flexible en columna y no enrollable.*/
+.seccion1{
+margin-top: 100px;
+display: flex;
+flex-flow: column nowrap;
+}
+
+/* Se le da un ancho, se dispone como modelo de caja flexible en fila y no enrollable.*/
+.parte_superior{
+width: 100%;
+display: flex;
+flex-flow: row nowrap;
+}
+
+/*  Se le da un ancho del 60% del viewport, se define la capacidad de alterar sus dimensiones de manera flexible, se usa modelo 
+de caja flexible en columna y no enrollable.*/
+.puntuacion{
+width: 60vw;
+flex: 1 2 auto;
+display: flex;
+flex-flow: column nowrap;
+}
+
+/* Se le da un ancho del 63% del viewport, se usa modelo de caja flexible en fila no enrollable y se centra.*/
+.zona1{
+width: 63vw;
+display: flex;
+flex-flow: row nowrap;
+justify-content: center;
+}
+
+/* Se define un margen exterior, se redondean los bordes, se establece alto y ancho con un máximo de ancho del 100% para 
+asegurar la responsividad, se le da un color de una de las variables, se define la capacidad de alterar sus dimensiones de 
+manera flexible, usa el modelo de caja flexible en columna y no enrollable y se centran los elemento.*/
+.producto{
+margin: 30px;
+border-radius: 10px;
+height: 250px;
+width: 10vw;
+max-width: 100%;
+background-color: var(--color3);
+flex: 1 1 300px;
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
+}
+
+/* Se le aplica un borde, un color de fondo y se redondea hasta hacer un círculo.*/
+.imagen_prod{
+border: 2px solid white; 
+background-color: var(--color2);
+border-radius: 100px;
+}
+
+/* Texto centrado y tipo de fuente y respaldo.*/
+.nombre_prod{
+text-align: center;
+font-family: 'montserrat', sans-serif;  
+}
+
+/* Se aplica un margen exterior inferior*/
+.contenedor_puntuacion{
+margin-top: 20px;  
+}
+
+/* Se le da un ancho del 63% del viewport, se usa modelo de caja flexible en fila no enrollable.*/
+.zona2{
+width: 63vw;
+display: flex;
+flex-flow: row nowrap;
+}
+
+/* Se le da un ancho con el viewport, un margen exterior derecho, se define la capacidad de alterar sus dimensiones de 
+manera flexible, se usa modelo de caja flexible en columna y se centra el contenido.*/
+.promocion{
+width: 20vw;
+margin-right: 20px;
+flex: 1 1 auto;
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-items: center;
+}
+
+/* Se centra el texto y se le da un tipo de fuente y su respaldo.*/
+.nombre_promocion{
+text-align: center;
+font-family: 'montserrat', sans-serif;
+}
+
+/* Se le da un tipo de fuente y su respaldo, se pone el texto justificado para que quede cuadrado.*/
+.texto_promocion{
+font-family: 'Quicksand', sans-serif;
+text-align: justify;
+}
+
+/* Se le da un margen superior, se centra el texto y se le da un tipo de fuente y su respaldo.*/
+.precio_promocion{
+margin-top: 20px;
+text-align: center;
+font-family: 'montserrat', sans-serif;
+}
+
+/* Se le da un margen exterior superior, un alto automático, un ancho y se usa modelo de caja flexible en fila y no enrollable.*/
+.seccion_inferior{
+margin-top: 200px;
+display: flex;
+flex-flow: row nowrap;
+width: 100%;
+height: auto;
+}
+
+/* Se define altura y ancho, se pone en flex en columna y no enrollable y los elementos centrados.*/
+.opiniones{
+height: auto;
+width: 100%;
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
+
+}
+
+/* Se le da un color de fondo, se define la capacidad de alterar sus dimensiones de manera flexible, se pone en flex, en columna 
+y no enrollable, se le da borde al contenedor doble sombra y margen inferior.*/
+.empresa_opinion{
+background-color: rgb(230, 226, 226);
+flex: 1 1 80%;
+display: flex;
+flex-flow: column nowrap;
+border-radius: 10px;
+box-shadow: -5px 5px 8px rgb(25, 24, 24), -5px 5px 8px rgb(231, 137, 137) ;
+margin-bottom: 20px;
+}
+
+/* Se le da relleno interior, caja flexible en fila y no enrollable.*/
+.empresa_servicio{
+padding: 10px;
+display: flex;
+flex-flow: row nowrap;
+}
+
+/* Se le da margen exterior derecho.*/
+.parte_derecha{
+margin-left: -20px;
+}
+
+/* Se le da relleno interior.*/
+.comentarios{
+padding: 10px; 
+}
+
+/* Se aplica color de fondo, borde redondeado, se le da un tipo de fuente y su respaldo, se pone el texto justificado 
+para que quede cuadrado y un ancho del 40% del viewport.*/
+.comentarios fieldset{
+background-color: #f7f2f2;
+border-radius: 10px;
+font-family: 'Quicksand', sans-serif;
+text-align: justify;
+width: 40vw;
+}
+
+/* Se le da relleno*/
+.parrafo{
+padding: 5px;
+}
+
+/* Contenedor flexible, se le da un relleno, bordes redondeados, un color de fondo y opacity a 0 para que esté oculto.*/
+.texto_oculto{
+display: flex;
+padding: 2px;
+border-radius: 10px;
+background-color: var(--color2);
+opacity: 0;
+}
+
+/* Se invierten los colores al pasar con el ratón (:hover) .*/
+.img_hover:hover {
+filter: invert(100%);
+
+}
+
+/* Al pasar por encima con el ratón opacity de texto_oculto se pone a 1 (visible).*/
+.img_hover:hover + .texto_oculto{
+opacity: 1;  
+}
+
+/* Contenedor de estilo flexible, tipo de fuente y respaldo y texto en negrita.*/
+.text_emp_prod{
+display: flex;
+font-family: 'montserrat', sans-serif;
+font-weight: bold;
+}
+
+/* Se le aplica anchura, altura y anchura máxima, contendor de estilo flexible, contenido centrado vertical y horizontalmente.*/
+.tabla{
+height: 50%;
+width: 100%;
+max-width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+/* A la tabla se le establece un ancho automático, se define la capacidad de alterar sus dimensiones de manera flexible, bordes 
+colapsados, se le aplican a las columnas, tipo de fuente, un borde, un relleno y texto alineado al centro, se le aplica color 
+a la fila de la cabecera y al resto se le aplica un color a las pares y otro a las impares.*/
+table{
+width: auto;
+flex: 1 1 40%;
+margin-right: 20px;
+border-collapse: collapse;
+}
+
+th, td {
+font-family: 'Quicksand', sans-serif;
+border: 1px solid #ddd;
+padding: 8px;
+text-align: center;
+}
+
+th {
+
+background-color: var(--color2);
+}
+
+tr{
+background-color: white;
+}
+
+tr:nth-child(even) {
+background-color: #b5b2b2;
+}
+
+/* Se le aplica tipo de fuente, en negrita y se le da un margen inferior. */
+caption {
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+/* Se le pone un borde superior, un margen inferior, un color de fondo por variables del proyecto, un ancho, alto y como 
+contenedor de estilo flexible en columna y no enrollable.*/
+.seccion2{
+border-top: 2px solid var(--color1);
+margin-top: 30px;
+background-color: var(--color3);
+width: 100%;
+height: auto;
+display: flex;
+flex-flow: column nowrap;
+}
+
+/* Tipo de fuente, texto alineado al centro y un margen inferior.*/
+#titulo_zona2{
+font-family: 'montserrat', sans-serif;
+text-align: center;
+margin-top: 20px;
+}
+
+/* Se establece el tipo de letra para el texto, se alinea encuadrado, se le pone márgenes, se agrupa en dos columnas, 
+con equilibrio balanceado y estilo de columna groove. */
+.texto_zona2{
+font-family: 'Quicksand', sans-serif;
+text-align: justify;
+margin: 20px;
+column-count: 2;
+column-fill: balance;
+column-rule-style:groove;
+}
+
+/* Se pone la primera letra de los textos en estilo capital.*/
+.texto_zona2 p:nth-child(2)::first-letter{
+font-size: 30px;
+}
+
+.texto_zona2::first-letter{
+font-size: 30px;
+}
+
+/* Contenedor de estilo flexible, se establece el espacio entre imágenes y se le da un margen.*/
+.img_zona2{
+display: flex;
+justify-content: space-evenly;
+margin: 20px;
+}
+
+/* Se le da un ancho máximo para las imágenes, un alto automático y un ancho del 48% para que quepan las dos imágenes.*/
+.img_zona2 img{
+max-width: 100%;
+height: auto;
+width: 48%;
+}
+
+/* Se asigna footer al área de la cuadrícula, se pone el contenedor en cuadrícula, se crean tres columnas con ancho automático 
+y se le da formato para que los elementos se estiren ocupando el ancho del contenedor.  */
+footer{
+grid-area: footer;
+display: grid;
+grid-template-columns: auto auto auto;
+justify-content: stretch;
+}
+
+/* Se le asigna un color de fondo, una altura fija y un ancho de una fracción para ocupar el ancho disponible, se pone el 
+contenedor en cuadrícula y centrado vertical y horizontalmente.*/
+.sub_pie1{
+background-color: rgb(46, 45, 42);
+height: 200px;
+width: 1fr;
+display: grid;
+align-content: center;
+justify-content: center;
+}
+
+/* Se le da color a la fuente y se le asigna una con margen superior.*/
+.sub_pie1 h2{
+color: beige;
+margin-top: 20px;
+font-family: 'montserrat', sans-serif;
+}
+
+/* Se le da un margen a los checkbox para que se vean mejor.*/
+.checkbox_hover{
+margin: 10px;
+}
+
+/* Cuando se posiciona el ratón sobre ellos se cambia el color de la fuente (hover).*/
+.checkbox_hover:hover{
+color: #b96565;
+}
+
+/* Se le da tipo de fuente y el color.*/
+.sub_pie1 div form label{
+color: beige;
+font-family: 'Quicksand', sans-serif;
+}
+
+/* Se le da un relleno inferior al contenedor del checkbox.*/
+.contenedor_check{
+padding-bottom: 20px;
+}
+
+/* Se le asigna un color de fondo, una altura fija y un ancho de una fracción para ocupar el ancho disponible, se pone el 
+contenedor en cuadrícula y centrado vertical y horizontalmente.*/
+.sub_pie2{
+background-color: rgb(146, 145, 138);
+height: 200px;
+width: 1fr;
+display: grid;
+align-content: center;
+justify-content: center;
+}
+
+/* Se ponen las viñetas de la lista en cuadrados.*/
+.sub_pie2 ul{
+list-style-type: square;
+}
+
+/* Cada elemento de la lista se le aplica un relleno y un color y fuente.*/
+.sub_pie2 li{
+color: beige;
+padding: 10px;
+font-family: 'Quicksand', sans-serif;
+}
+
+/* Al pasar encima con el ratón se cambia el color (hover).*/
+.sub_pie2 li:hover{
+color: #b96565;
+}
+
+/* Se le aplica color de fondo, altura fija, ancho de una fracción flexible, se utiliza el modelo de caja de flexible en fila 
+y no enrollable, los elementos centrados y distribución del espacio sobrante uniformemente. */
+.sub_pie3{
+background-color: var(--color3);
+height: 200px;
+width: 1fr;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-items: center;
+justify-content: space-around;
+}
+
+/* Se estable el color para cada contenedor en el que hay imagen con un borde y redondeado.*/
+.sub_pie3 div img{
+background-color: white;
+border: 2px solid var(--color1);
+border-radius: 10px;
+}
+
+/* Cuando se pasa el ratón por encima se cambia el color del borde y del fondo (hover).*/
+.sub_pie3 div img:hover{
+border: 2px solid rgb(202, 202, 96);
+border-radius: 10px;
+background-color: var(--color2);
+}
+
+/* Estilos aplicados cuando la pantalla tiene un ancho igual o menor de 620px.*/
+@media screen and (max-width: 620px) {
+
+/* Se oculta la imagen de producto en promoción del header.*/
+.img_header{
+    display: none;
+}
+
+/* Los botones del header se disponen en fila y se acercan al logo para encuadrarlos.*/
+.h_botones form{
+    display: flex;
+    flex-direction: row;
+    margin-left: -18px;
+}
+
+nav ul{
+    flex-direction: column;
+}
+
+.submenu{
+    display: inline;
+}
+
+nav li:hover > ul{
+    left: 54%;
+    top: 48%;
+
+}
+
+.sub_info{
+    background-color: white;
+    display: flex;
+    width: auto;
+    flex-flow: column wrap;
+    border-radius: 10px;
+    border: 1px solid var(--color3);
+    padding: 5px;
+}
+
+.barra_info .ul_info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+   
+    
+}
+
+.barra_info .ul_info ul {
+    display: none; 
+    list-style: none;
+}
+
+.barra_info li:hover > ul {
+    display: flex; 
+    
+    position: absolute; 
+    top: 50%;
+    left: 85%;
+    
+}
+
+.ul_info li a{
+    display: none;
+}
+
+/* Se ocultan la tabla y los comentarios de empresa.*/
+.seccion_inferior{
+    display: none;
+}
+
+/* Se pone en columna la parte superior del main con los productos y la promoción.*/
+.parte_superior{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* La zona superior de los productos se pone en columna y se adapta el ancho.*/
+.zona1{
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+}
+
+/* La zona inferior de los productos se pone en columna y se adapta el ancho.*/
+.zona2{
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+}
+
+/* Se adapta el contenedor de productos a las nuevas medidas.*/
+.producto{
+    margin: 30px;
+    height: 10px;
+    width: 90%; 
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Se oculta el último producto de la zona dos de productos.*/
+.zona2 #producto:last-child{
+    display: none;
+}
+
+/* Se adapta el contenedor de la promoción a las nuevas medidas.*/
+.promocion{
+    width: 98vw;
+    padding: 20px;  
+}
+
+/* Se pone el título del texto en minúsculas.*/
+#titulo_zona2{
+    text-transform: lowercase;
+}
+
+/* Se pone en una sola columna el texto.*/
+.texto_zona2{
+    column-count: 1;  
+}
+
+/* Se pone el inicio de los dos párrafos en el tamaño normal quitando la letra capital.*/
+.texto_zona2 p:nth-child(2)::first-letter{
+    font-size: 1em;
+}
+
+.texto_zona2::first-letter{
+    font-size: 1em;
+}
+
+/* Se quita la última foto de las dos que acompañan al texto.*/
+.img_zona2 img:last-child{
+    display: none;
+}
+
+/* Se quitan los dos contenedores laterales del pie y se deja el del medio adaptando el ancho.*/
+.sub_pie1{
+    display: none;
+}
+
+.sub_pie3{
+    display: none;
+}
+
+.sub_pie2{
+    width: 97.5vw;
+}
+
+/* Se pone la lista en fila y se le pone subrayado cuando pasamos por encima.*/
+.sub_pie2 li{
+    display: inline-block;
+}
+
+.sub_pie2 li:hover{
+    text-decoration: underline;
+}
+}

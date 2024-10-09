@@ -1,0 +1,896 @@
+/* Variables que contendrán los tres colores principales.*/
+:root {
+    --color1: #707B7C;
+    --color2: #7FB3D5;
+    --color3: RGBA(215, 219, 221, 0.6);
+    }
+    
+    /*Incorporación de fuentes de Google Fonts.*/
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap');
+    
+    /* Llamado a la fuente guardada en el proyecto para el nombre de la empresa*/
+    @font-face {
+    font-family: "fuente_local";
+    src: url("../fuentes/FragmentMono-Regular.ttf");
+    }
+    
+    /* Se establecen márgenes y rellenos a 0.*/
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    /* Se le dan las proporciones a la página en el contenedor principal con Grid creando 3 columnas y cuatro filas, se crean las áreas
+    y lo que van a ocupar cada una.*/
+    .contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header"
+                            "breadcrumb breadcrumb breadcrumb"
+                            "nav nav nav"
+                            "main main main"
+                            "footer footer footer";
+    }
+    
+    /* Se asigna header al área de la cuadrícula, se establece como Grid, se ponen las tres columnas a una fracción de ancho y centrada, 
+    se pone de fondo una imagen centrada y que ocupe todo el contenedor.  */
+    header{
+    grid-area: header;
+    height: 400px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    background:url("../img/edificio5.jpg");
+    background-size: cover;
+    background-position: center;
+    }
+    
+    /* Se establece una altura fija y una anchura automática con el contenido, se establece como grid y se centra el contenido 
+    vertical y horizontalmente.*/
+    .nombre{
+        height: 150px;
+        width: auto;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .nombre a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .nombre a:hover{
+        color:bisque;
+    }
+    
+    /* Se establece la fuente local y la de respaldo, se aplica sombra al texto y se le da un relleno interno.*/
+    .nombre h1{
+    font-family: "fuente_local", sans-serif;
+    text-shadow: 5px 5px 8px rgb(34, 33, 33);
+    padding: 10px;
+    }
+    
+    /* Se establece una altura fija y una anchura automática con el contenido, se establece como grid y se centra el contenido 
+    vertical y horizontalmente.*/
+    .sub_header2{
+    height: 150px;
+    width: auto;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    }
+    
+    /* Se establece una altura fija y una anchura automática con el contenido, se establece como grid y se centra el contenido 
+    vertical y horizontalmente con un espacio vertical entre filas.*/
+    .sub_header3{
+    height: 150px;
+    width: auto;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    row-gap: 90px;
+    }
+    
+    /* Se establece una altura y una anchura para el contenido, se establece como grid y se centra el contenido 
+    vertical y horizontalmente.*/
+    .h_botones{
+    width: 205px;
+    height: 30px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    }
+    
+    /* Se usa modelo de caja flexible y se ponen en columna.*/
+    .h_botones form{
+    display: flex;
+    flex-direction: column;
+    }
+    
+    /* Se le quitan los bordes a los botones, se le aplica un relleno interno, se le dan márgenes externos, se le aplican bordes 
+    redondeados, se le pone un color de fondo con variables del proyecto y se le cambia el color a la fuente.*/
+    input[type="submit"]{
+    border: none;
+    padding: 5px;
+    margin: 6px 8px;
+    border-radius: 15px;
+    background-color: var(--color3);
+    color: gray;
+    }
+    
+    /* Al pasar por encima (hover) de los botones se le cambia el color de fondo y de la fuente.*/
+    input[type="submit"]:hover{
+    background-color: var(--color1);
+    color: white;
+    }
+    
+    /* Se establece como grid y se centra el contenido 
+    vertical y horizontalmente.*/
+    .img_header{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    }
+
+    
+    
+    /* Se asigna nav al área de la cuadrícula, se da una altura adaptable en auto, se le pone un borde de color a la parte baja 
+    del contenedor y se usa modelo de caja flexible en fila y que se adapte al espacio del contenedor cambiando de fila, 
+    los elementos se centran vertical y horizontalmente.*/
+    nav{
+    grid-area: nav;
+    height: auto;
+    border-bottom: 2px solid var(--color3);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    }
+    /*
+    .submenu{
+        background-color: white;
+        display: flex;
+       
+        border-radius: 10px;
+        border: 1px solid var(--color3);
+    }
+    */
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+    nav ul ul {
+        display: none; 
+    }
+    
+    nav li:hover > ul {
+        display: flex; 
+        position: absolute; 
+        top: 56%;
+        left: 6%;
+        background-color: white;
+       
+       
+        border-radius: 10px;
+        border: 1px solid var(--color3);
+    }
+    
+    /* Para los enlaces se usa modelo de caja flexible, se le quita el subrayado, se cambia la fuente con su respaldo y se cambia 
+    el color de la misma, se aplica márgenes externos.*/
+    nav a{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    
+    color: var(--color1);
+    margin: 30px;
+    font-family: 'Montserrat', sans-serif;
+    }
+    
+    nav a:hover{
+        color: var(--color3);
+    }
+
+    .barra_info{
+        grid-area: breadcrumb;
+        display: flex;
+    }
+    
+    .breadcrumb{
+        list-style: none;
+        padding: 10px;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 15px;
+        border-bottom: 2px solid var(--color3);
+    }
+
+    .breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: ">";
+    }
+
+    .breadcrumb li{
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+    margin-left: 20px;
+    }
+
+    .breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+    }
+
+    .sub_info{
+        background-color: white;
+        display: flex;
+        width: auto;
+        flex-flow: column wrap;
+        border-radius: 10px;
+        border: 1px solid var(--color3);
+        padding: 5px;
+    }
+    
+    .barra_info .ul_info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        font-family: 'Montserrat', sans-serif;
+        
+    }
+    
+    .barra_info .ul_info ul {
+        display: none; 
+        list-style: none;
+    }
+    
+    .barra_info li:hover > ul {
+        display: flex; 
+        background-color: white;
+        
+        width: auto;
+        flex-flow: column wrap;
+        border-radius: 10px;
+        border: 1px solid var(--color3);
+        padding: 5px;
+        position: absolute; 
+        top: 50%;
+        left: 85%;
+        
+    }
+    
+    /* Se asigna main al área de cuadrícula, se usa el modelo de caja flexible en columna y que no puedan ocupar más espacio que 
+    el del contenedor, se le da un ancho y altura en automática, se pone una imagen de fondo ajustada al contendor y se deja fija 
+    para que no se desplace con la página. */
+    main{
+    grid-area: main;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: auto;
+    
+    }
+    
+   /*  Desde aquí tarea 3 ----------------------------------------------------------------------------------------------------------------  */
+    
+   /* Se establecen márgenes, y tipo de fuente al título del contenido centrándolo  */
+    main h1{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+   /* Se establecen margen, y tipo de fuente al título de la sección 1 centrándolo  */
+    .seccion1 h2{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin: 30px;
+    }
+
+    /* Se establece el contenedor como flexible en columna y no enrollable con ancho y alto automático y un color de fondo */
+    .seccion1{
+        width: auto;
+        height: auto;
+        background-color: var(--color3);
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    /*  Se establece el contenedor como flexible en fila y enrollable, alineados de manera uniforme, con un margen inferior y ancho y alto automático*/
+    .productos{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        margin-bottom: 70px;
+        width: auto;
+        height: auto;
+      
+    }
+
+    /* Se establece el contenedor como flexible en columna y no enrollable, se añade altura y ancho, borde redondeado, color de fondo y sombra. */
+    .producto{
+        display: flex;
+        flex-flow: column nowrap;
+        height: auto;
+        width: 28%;
+        border-radius: 10px;
+        border: 1px solid var(--color1);
+        background-color: white;
+        box-shadow: 5px 0px 8px rgb(34, 33, 33);
+    }
+
+    /* Se establecen margen, y tipo de fuente al título del producto centrándolo  */
+    .producto h3{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin: 30px;
+    }
+
+    /* Se establece contenedor flexible en fila y no enrollable */
+    .producto_contenido{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    /* Se le pone display block y un ancho máximo para que la imagen se adapte al tamaño de la pantalla, con una margen izquierdo y alto. */
+    .imag_producto1{
+        max-width: 100%;
+        height: 200px;
+        display: block;
+        margin-left: 20px;
+      
+    }
+
+    .imag_producto2{
+        max-width: 100%;
+        height: 200px;
+        display: block;
+        margin-left: 20px;
+    }
+
+    .imag_producto3{
+        max-width: 100%;
+        height: 200px;
+        display: block;
+        margin-left: 20px;
+    }
+
+    /* Se justifica el texto, se añade tipo de fuente y se le da márgenes y ancho.*/
+    .producto_imagen p{
+        font-family: 'Quicksand', sans-serif;
+        margin: 5px;
+        width: 10vw;
+        text-align: justify;
+    }
+
+    /*  Se añade tipo de fuente y se le da márgenes.*/
+    .producto_comentarios ul{
+        margin-left: 30px;
+        margin-bottom: 30px;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    /* Se justifica el texto, se añade tipo de fuente y se le da márgenes y ancho, bordes redondeados y color de fondo. */
+    .producto_comentarios .coment{
+        background-color: #f7f2f2;
+        border-radius: 10px;
+        font-family: 'Quicksand', sans-serif;
+        text-align: justify;
+        width: 15vw;
+        margin-left: 20px;
+        margin-right: 5px;
+      
+    }
+    
+    /* Se añade tipo de fuente y se le da márgenes  */
+    .parrafo{
+        font-family: 'Quicksand', sans-serif;
+        margin: 5px;
+        
+    }
+
+    /*Se establece como contenedor flexible en fila y no enrollable, con margen superior. */
+    .seccion2{
+        margin-top: 60px;
+        display: flex;
+        flex-flow: row nowrap;
+
+    }
+
+    /*Se establece como contenedor flexible en columna y no enrollable, con un ancho. */
+    .contenido_articulos{
+        display: flex;
+        flex-flow: column nowrap;
+        width: 60%;
+    }
+
+    /* Se establecen margen, y tipo de fuente al título del producto centrándolo  */
+    .contenido_articulos h2{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin: 30px;
+    }
+
+    /* Se establece como contenedor flexible en columna y no enrollable, centrado vertical y horizontalmente. */
+    .articulo_1{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes  */
+    .articulo_1 h3{
+        font-family: 'Montserrat', sans-serif;
+        margin: 20px;
+    }
+
+    /* Se le pone display block y un ancho máximo para que la imagen se adapte al tamaño de la pantalla, con un ancho y alto. */
+    .imag_art_1{
+        width: 800px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes y el texto se justifica */
+    .articulo_1 p{
+        font-family: 'Quicksand', sans-serif;
+        margin: 20px;
+        text-align: justify;
+    }
+
+    /* Se establece como contenedor flexible en columna y no enrollable, centrado vertical y horizontalmente, con un margen superior. */
+    .articulo_2{
+        margin-top: 40px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes.*/
+    .articulo_2 h3{
+        font-family: 'Montserrat', sans-serif;
+        margin: 20px;
+    }
+
+    /* Se le pone display block y un ancho máximo para que la imagen se adapte al tamaño de la pantalla, con un ancho y alto. */
+    .imag_art_2{
+        width: 800px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes y el texto se justifica */
+    .articulo_2 p{
+        font-family: 'Quicksand', sans-serif;
+        margin: 20px;
+        text-align: justify;
+    }
+
+    /* Se establece como contenedor flexible en columna y no enrollable, centrado con un ancho, color de fondo y bordes redondeados.*/
+    .equipo{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 40%;
+        background-color: var(--color2);
+        border-radius: 10px;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes.*/
+    .equipo h2{
+        font-family: 'Montserrat', sans-serif;
+        margin: 30px;
+    }
+
+    /* Se establece como contenedor flexible en columna y no enrollable, centrado.*/
+    .empleado{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    /* Se establece como contenedor flexible en fila y no enrollable, centrado.*/
+    .datos_emp{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content:center;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes.*/
+    .datos_emp ul{
+        font-family: 'Quicksand', sans-serif;
+        margin: 15px;
+        margin-bottom: 50px;
+        margin-left: 20px;
+    }
+
+    /* Se le pone display block y un ancho máximo para que la imagen se adapte al tamaño de la pantalla, con un ancho y bordes redondeados. */
+    .imag_emp{
+        border-radius: 30px;
+        width: 480px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Se establece como contenedor flexible en fila y no enrollable, ancho y margenes.*/
+    .seccion3{
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    /* Se establece como contenedor flexible en columna y no enrollable, centrado vertical y horizontalmente, con un margen inferior y ancho. */
+    .contenedor_tabla{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        padding-bottom: 550px;
+        width: 60%;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes.*/
+    .contenedor_tabla h2{
+        margin: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes.*/
+    .contenedor_tabla p{
+        margin: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Se le pone display block y un ancho máximo para que la tabla se adapte al tamaño de la pantalla, con un ancho y bordes colapsados, con un alto. ancho y tipo de fuente. */
+    table{
+        font-family: 'Quicksand', sans-serif;
+        border-collapse: collapse;
+        width: 955px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Se establece margen inferior. */
+    caption{
+        margin-bottom: 10px;
+    }
+
+    /* Se centran los textos, se le da un margen interior, un borde y un ancho máximo, se añade word-break. */
+    tr,th,td{
+        text-align: center;
+        padding: 2px;
+        border: 2px solid black;
+        max-width: 100%;
+        word-break: break-all; /* Rompe la palabra para que la tabla se adapte al tamaño del contenedor */
+    }
+
+    /* Se añade color de fuente y de fondo. */
+    th {
+        background-color: rgb(64, 63, 63);
+        color: white;
+    }
+        
+    /* Se añade color de fondo*/
+    tr{
+        background-color: var(--color3);
+    }
+    
+    /* color de fondo a las filas pares. */
+    tr:nth-child(even) {
+        background-color: #b5b2b2;
+    }
+
+    /* Se establece como contenedor flexible en columna y no enrollable, centrado verticalmente con un ancho, bordes redondeados y color de fondo. */
+    .contenedor_formulario{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 40%;
+        border-radius: 10px;
+        background-color: var(--color2);
+    }
+
+    /* Se añade tipo de fuente y se le da márgenes.*/
+    .contenedor_formulario h2{
+        font-family: 'Montserrat', sans-serif;
+        margin: 30px;
+    }
+
+    /* Cuando el input es inválido se muestra el borde rojo */
+    .contenedor_formulario input:invalid {
+        border: solid 2px red;
+    }
+    
+    /* Cuando el input es válido se muestra el borde verde. */
+    .contenedor_formulario input:valid {
+        border: solid 2px green;
+    }
+
+    /* Al lado de cada campo obligatorio se ha puesto una etiqueta span de clase mensaje que se oculta cuando el campo es válido */
+    .contenedor_formulario input:valid +.mensaje { 
+        visibility: hidden;
+    }
+
+    /* Se le pone display block y un ancho máximo para que el formulario se adapte al tamaño de la pantalla. */
+    form{
+        max-width: 100%;
+        display: block;
+    }
+
+    /* Se le añade ancho, margen interno, borde redondeado, márgenes externos, color de fondo y tipo de fuente. */
+    form fieldset{
+        width:300px;
+        padding:16px;
+        border-radius:10px;
+        margin:auto;
+        background-color:#ccc;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    /* Se le ponen bordes redondeados, un ancho y margen exterior. */
+    button{
+        border-radius: 5px;
+        width: 130px;
+        margin: 10px;
+    }
+
+   /*  Hasta aquí tarea 3  ----------------------------------------------------------------------------------------------------------------  */
+
+    
+    /* Se asigna footer al área de la cuadrícula, se pone el contenedor en cuadrícula, se crean tres columnas con ancho automático 
+    y se le da formato para que los elementos se estiren ocupando el ancho del contenedor.  */
+    footer{
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: stretch;
+    }
+    
+    /* Se le asigna un color de fondo, una altura fija y un ancho de una fracción para ocupar el ancho disponible, se pone el 
+    contenedor en cuadrícula y centrado vertical y horizontalmente.*/
+    .sub_pie1{
+    background-color: rgb(46, 45, 42);
+    height: 200px;
+    width: 1fr;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    }
+    
+    /* Se le da color a la fuente y se le asigna una con margen superior.*/
+    .sub_pie1 h2{
+    color: beige;
+    margin-top: 20px;
+    font-family: 'montserrat', sans-serif;
+    }
+    
+    /* Se le da un margen a los checkbox para que se vean mejor.*/
+    .checkbox_hover{
+    margin: 10px;
+    }
+    
+    /* Cuando se posiciona el ratón sobre ellos se cambia el color de la fuente (hover).*/
+    .checkbox_hover:hover{
+    color: #b96565;
+    }
+    
+    /* Se le da tipo de fuente y el color.*/
+    .sub_pie1 div label{
+    color: beige;
+    font-family: 'Quicksand', sans-serif;
+    }
+    
+    /* Se le da un relleno inferior al contenedor del checkbox.*/
+    .contenedor_check{
+    padding-bottom: 20px;
+    }
+    
+    /* Se le asigna un color de fondo, una altura fija y un ancho de una fracción para ocupar el ancho disponible, se pone el 
+    contenedor en cuadrícula y centrado vertical y horizontalmente.*/
+    .sub_pie2{
+    background-color: rgb(146, 145, 138);
+    height: 200px;
+    width: 1fr;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    }
+    
+    /* Se ponen las viñetas de la lista en cuadrados.*/
+    .sub_pie2 ul{
+    list-style-type: square;
+    }
+    
+    /* Cada elemento de la lista se le aplica un relleno y un color y fuente.*/
+    .sub_pie2 li{
+    color: beige;
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    }
+    
+    /* Al pasar encima con el ratón se cambia el color (hover).*/
+    .sub_pie2 li:hover{
+    color: #b96565;
+    }
+    
+    /* Se le aplica color de fondo, altura fija, ancho de una fracción flexible, se utiliza el modelo de caja de flexible en fila 
+    y no enrollable, los elementos centrados y distribución del espacio sobrante uniformemente. */
+    .sub_pie3{
+    background-color: var(--color3);
+    height: 200px;
+    width: 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    }
+    
+    /* Se estable el color para cada contenedor en el que hay imagen con un borde y redondeado.*/
+    .sub_pie3 div img{
+    background-color: white;
+    border: 2px solid var(--color1);
+    border-radius: 10px;
+    }
+    
+    /* Cuando se pasa el ratón por encima se cambia el color del borde y del fondo (hover).*/
+    .sub_pie3 div img:hover{
+    border: 2px solid rgb(202, 202, 96);
+    border-radius: 10px;
+    background-color: var(--color2);
+    }
+    
+    /* Estilos aplicados cuando la pantalla tiene un ancho igual o menor de 620px.*/
+    @media screen and (max-width: 620px) {
+    
+        /* Se oculta la imagen de producto en promoción del header.*/
+        .img_header{
+            display: none;
+        }
+        
+        /* Los botones del header se disponen en fila y se acercan al logo para encuadrarlos.*/
+        .h_botones form{
+            display: flex;
+            flex-direction: row;
+            margin-left: -18px;
+        }
+
+        /* Desde aquí ejercicio 3---------------------------------------------------------------------------------------------------------- */
+        
+        /* Establece la dirección de la lista en columnas dentro del elemento nav */
+        nav ul{
+            flex-direction: column;
+        }
+        
+        /* Dispay inline para mostrar en línea */
+        .submenu{
+            display: inline;
+        }
+        
+        /* Ajusta la posición del menú desplegable secundario */
+        nav li:hover > ul{
+            left: 55%;
+            top: 41%;
+        
+        }
+
+        /* Oculta la lista con la información de teclas */
+        .ul_info li a{
+            display: none;
+        }
+
+        /* Establece el ancho, alto y márgenes para el contenedor de los productos */
+        .producto{
+            width: 400px;
+            margin: 20px;
+            padding-bottom: 5px;
+        }
+        
+        /* Establece los contenidos centrados y en columna */
+        .productos{
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        /* Añade un margen a la izquierda en la lista*/
+        .producto_comentarios ul{
+            margin-left: 70px;
+        }
+
+        /* Ancho para la descripción del producto. */
+        .producto_imagen p{
+            width: 135px;
+        }
+
+        /* Establece los contenidos centrados y en columna */
+        .seccion2{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Ancho del contenedor de equipo */
+        .equipo{
+            width: 80%;
+        }
+        
+        /* Ancho del texto del artículo 1 */
+        .articulo_1 p{
+            width: 100%;
+        }
+
+        /* Ancho del texto del artículo 2 */
+        .articulo_2 p{
+            width: 100%;
+        }
+
+        /* Establece los contenidos centrados y en columna */
+        .seccion3{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Se añade margen interno al contenedor de la tabla y ancho*/
+        .contenedor_tabla{
+            padding-bottom: 60px;
+            width: 100%;
+        }
+
+        /* Establece ancho del contendor del formulario*/
+        .contenedor_formulario{
+            width: 80%;
+        }
+
+        /* Ancho del contenedor de los comentarios */
+        .producto_comentarios .coment{
+            width: 29vw;
+        }
+
+        /* Hasta aquí ejercicio 3-------------------------------------------------------------------------------------------------------------- */
+        
+        /* Se quitan los dos contenedores laterales del pie y se deja el del medio adaptando el ancho.*/
+        .sub_pie1{
+            display: none;
+        }
+        
+        .sub_pie3{
+            display: none;
+        }
+        
+        .sub_pie2{
+            width: 97.5vw;
+        }
+        
+        /* Se pone la lista en fila y se le pone subrayado cuando pasamos por encima.*/
+        .sub_pie2 li{
+            display: inline-block;
+        }
+        
+        .sub_pie2 li:hover{
+            text-decoration: underline;
+        }
+    }
